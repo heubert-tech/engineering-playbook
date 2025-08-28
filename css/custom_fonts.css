@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
+
+/* Set heading font family, color, and weight */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: 'Work Sans', sans-serif;
+  color: black;
+  font-weight: 700; /* Setting to 700 as it's the highest imported weight */
+}
+
+/* Custom header background color */
+.md-header {
+  background-color: #8e44ad;
+}
+
+/* Make logo larger */
+.md-header__button.md-logo img {
+  height: 5rem !important; /* Increased size and added !important */
+  width: auto !important; /* Maintain aspect ratio and added !important */
+}
+
+/* Change hover color to #8e44ad for general elements */
+a:hover,
+a:focus,
+.md-tabs__link:hover,
+.md-tabs__link:focus,
+.md-header__button:hover,
+.md-header__button:focus,
+.md-search-result__link:hover,
+.md-search-result__link:focus {
+  color: #8e44ad !important;
+}
+
+/* Change sidebar hover color to #8e44ad */
+.md-sidebar .md-nav__link:hover,
+.md-sidebar .md-nav__link:focus {
+  color: #8e44ad !important;
+}
+
+/* Change scrollbar hover color to #8e44ad */
+.md-sidebar__scrollwrap:hover {
+  scrollbar-color: #8e44ad transparent !important;
+}
+
+/* Change active color to #8e44ad */
+.md-nav__item--active > .md-nav__link,
+.md-nav__item--active > .md-nav__link:focus,
+.md-nav__item--active > .md-nav__link:hover,
+.md-tabs__link--active,
+.md-tabs__link--active:focus,
+.md-tabs__link--active:hover {
+  color: #8e44ad !important;
+}
+
+/* Change active color to #8e44ad for specific sidebar active link */
+.md-nav__link.md-nav__link--active {
+  color: #8e44ad !important;
+}
+
+/* Custom footer background color for meta section only */
+.md-footer-meta {
+  background-color: #8e44ad;
+}
+
+/* Change copyright text color to white */
+.md-copyright__inner {
+  color: white !important;
+}
+
+/* Hide "Made with Material for MkDocs" */
+.md-copyright__inner a[href*="mkdocs-material"] {
+  display: none !important;
+}
+
+/* Change footer text color to white on hover */
+.md-footer-meta__inner a:hover,
+.md-footer-meta__inner a:focus {
+  color: white !important;
+}
