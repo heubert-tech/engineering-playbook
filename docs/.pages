@@ -1,0 +1,9 @@
+nav:
+  - Why Playbook: README.md
+  - Engineering Fundamentals Checklist: engineering-fundamentals-checklist.md
+  - The First Week of a Project: the-first-week-of-a-project.md
+  - Agile Development: agile-development
+  - Automated Testing: automated-testing
+  - CI/CD: CI-CD
+  - ...
+  - UI/UX: UI-UX

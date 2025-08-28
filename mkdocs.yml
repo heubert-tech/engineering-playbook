@@ -1,0 +1,45 @@
+---
+site_name: Engineering Fundamentals Playbook
+site_url: https://microsoft.github.io/code-with-engineering-playbook
+site_description: ISE Engineering Fundamentals Engineering Playbook
+site_author: Microsoft ISE
+
+# repo_url: https://github.com/microsoft/code-with-engineering-playbook/
+edit_uri: ""
+
+theme:
+  name: material
+  custom_dir: mkdocs-overrides
+  font:
+    text: Work Sans
+    code: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace
+  palette:
+    primary: '#8e44ad'
+    accent: '#8e44ad'
+  # optional: disable Google Fonts injection
+  features:
+    - content.code.copy   # unrelated to fonts; handy
+  generator: false
+  logo: resources/hb-icon.png
+  favicon: resources/hb-icon.png
+#  features:
+#    - navigation.instant
+#    - navigation.indexes
+
+plugins:
+  - search
+  - git-revision-date-localized
+  - awesome-pages
+
+markdown_extensions:
+  - meta
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.pathconverter
+  - pymdownx.tabbed
+  - mdx_truly_sane_lists
+  - pymdownx.tasklist
+
+extra_css:
+  - css/custom_fonts.css

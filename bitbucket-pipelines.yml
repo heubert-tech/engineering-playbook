@@ -1,0 +1,43 @@
+# bitbucket-pipelines.yml
+image: python:3.9-slim # Changed default image to python for MkDocs
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: MegaLinter on Push to Main
+          image: oxsecurity/megalinter:v8.1.0 # Specify image for this step
+          script:
+            - megalinter-runner
+          artifacts:
+            - megalinter-reports/**
+            - mega-linter.log
+          variables:
+            - APPLY_FIXES: "none"
+            - APPLY_FIXES_EVENT: "push"
+            - APPLY_FIXES_MODE: "commit"
+            - VALIDATE_ALL_CODEBASE: "false" # Simplified for now.
+      - step:
+          name: Build MkDocs Site
+          script:
+            - pip install --upgrade pip
+            - pip install wheel
+            - pip install -r requirements-docs.txt
+            - mkdocs build
+          artifacts:
+            - site/** # Capture the built site as an artifact
+  pull-requests:
+    '**': # This will run for all pull requests. If you only want PRs to 'main', it's more complex.
+      - step:
+          name: MegaLinter on Pull Request
+          image: oxsecurity/megalinter:v8.1.0 # Specify image for this step
+          script:
+            - megalinter-runner
+          artifacts:
+            - megalinter-reports/**
+            - mega-linter.log
+          variables:
+            - APPLY_FIXES: "none"
+            - APPLY_FIXES_EVENT: "pull_request" # Changed for PRs
+            - APPLY_FIXES_MODE: "pull_request" # Changed for PRs
+            - VALIDATE_ALL_CODEBASE: "false" # Simplified for now.
